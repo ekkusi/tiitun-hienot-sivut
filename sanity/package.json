@@ -1,0 +1,36 @@
+{
+  "name": "tiitu-cms",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "package.json",
+  "author": "ekkusi <ekku.eki@gmail.com>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "npx @sanity/cli start",
+    "build": "npx @sanity/cli build",
+    "deploy": "npx @sanity/cli deploy",
+    "generate-types": "sanity-codegen"
+  },
+  "keywords": [
+    "sanity"
+  ],
+  "dependencies": {
+    "@sanity/base": "^2.35.2",
+    "@sanity/core": "^2.35.0",
+    "@sanity/default-layout": "^2.35.2",
+    "@sanity/default-login": "^2.35.2",
+    "@sanity/desk-tool": "^2.35.2",
+    "@sanity/eslint-config-studio": "^2.0.1",
+    "@sanity/vision": "^2.35.2",
+    "eslint": "^8.6.0",
+    "prop-types": "^15.7",
+    "react": "^17.0",
+    "react-dom": "^17.0",
+    "styled-components": "^5.2.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.0",
+    "sanity-codegen": "^0.9.8"
+  }
+}

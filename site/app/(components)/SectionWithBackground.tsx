@@ -1,8 +1,9 @@
 import { Box } from "../../components/chakra";
 import Image, { ImageProps } from "next/image";
 import { BoxProps } from "@chakra-ui/react";
+import Section, { SectionProps } from "./Section";
 
-type SectionWithBackgroundProps = BoxProps & {
+export type SectionWithBackgroundProps = SectionProps & {
   imgSrc: string;
   imgAlt: string;
   imageProps?: Omit<ImageProps, "src" | "alt">;
@@ -16,19 +17,40 @@ const SectionWithBackground = ({
   ...rest
 }: SectionWithBackgroundProps) => {
   return (
-    <Box position="relative" clipPath="inset(0)" {...rest}>
-      <Box
-        position="fixed"
-        top="0"
-        left="0"
-        right="0"
-        bottom="0"
-        objectFit="cover"
-      >
-        <Image src={imgSrc} alt={imgAlt} fill {...imageProps} />
-      </Box>
+    // <Section
+    //   as="div"
+    //   position="relative"
+    //   clipPath="inset(0)"
+    //   isWide
+    //   py={0}
+    //   {...rest}
+    // >
+    //   <Box
+    //     position="fixed"
+    //     top="0"
+    //     left="0"
+    //     right="0"
+    //     bottom="0"
+    //     objectFit="cover"
+    //   >
+    //     <Image src={imgSrc} alt={imgAlt} fill {...imageProps} />
+    //   </Box>
+    //   {children}
+    // </Section>
+    <Section
+      as="div"
+      position="relative"
+      isWide
+      py={0}
+      backgroundImage={imgSrc}
+      backgroundRepeat="no-repeat"
+      backgroundPosition="center"
+      backgroundSize="cover"
+      backgroundAttachment="fixed"
+      {...rest}
+    >
       {children}
-    </Box>
+    </Section>
   );
 };
 

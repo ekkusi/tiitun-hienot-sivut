@@ -1,4 +1,6 @@
-import { extendTheme } from "@chakra-ui/react";
+"use client";
+
+import { extendTheme, Theme } from "@chakra-ui/react";
 import colors from "./colors";
 import {
   Button,
@@ -24,18 +26,18 @@ const theme = extendTheme({
         margin: 0,
         width: "100%",
         minHeight: "100vh",
-        color: colors.text,
-        bg: colors.bg,
+        color: colors.textWhite,
+        bg: colors.darkBg,
         overflowX: "hidden",
       },
       body: {
-        fontSize: { base: "md", md: "lg" },
+        fontSize: { base: "xl", md: "2xl" },
       },
       p: {
         marginBottom: "2",
       },
       a: {
-        color: colors.primary[500],
+        color: colors.primary,
         _hover: {
           opacity: 0.7,
         },
@@ -45,10 +47,14 @@ const theme = extendTheme({
         fontSize: { base: "4xl", md: "6xl" },
       },
       h2: {
-        fontSize: { base: "2xl", md: "4xl" },
+        fontSize: { base: "3xl", md: "4xl" },
       },
       h3: {
-        fontSize: { base: "xl", md: "2xl" },
+        fontSize: { base: "2xl", md: "3xl" },
+      },
+      ".next-image__auto-height": {
+        height: "auto !important",
+        position: "relative !important",
       },
     }),
   },

@@ -38,6 +38,6 @@
   "scripts": {
     "start": "concurrently \"yarn --cwd site develop\" \"yarn --cwd sanity start\"",
     "stop": "bash scripts/killall.sh",
-    "build": "yarn --cwd frontend build"
+    "build": "yarn --cwd site build"
   }
 }

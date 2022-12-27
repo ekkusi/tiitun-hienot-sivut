@@ -4,6 +4,7 @@ import Image, { ImageProps } from "next/image";
 import Link from "next/link";
 import { Project } from "../../api/queries";
 import { Box, Text } from "../../components/chakra";
+import { makeBlurImage } from "./Image";
 
 type ProjectCardProps = TextProps & {
   project: Project;
@@ -53,6 +54,8 @@ const ProjectCard = ({ project, imageProps, ...rest }: ProjectCardProps) => {
           className="next-image__auto-height"
           src={project.main_image.url}
           alt={project.name}
+          placeholder="blur"
+          blurDataURL={`data:image/svg+xml;base64,${makeBlurImage()}`}
           fill
           {...imageProps}
         />

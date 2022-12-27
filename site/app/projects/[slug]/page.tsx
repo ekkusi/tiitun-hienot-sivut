@@ -3,7 +3,7 @@ import ImageGallery from "../../(components)/ImageGallery";
 import ProjectGallery from "../../(components)/ProjectGallery";
 import Section from "../../(components)/Section";
 import { getProject, getProjects } from "../../../api/queries";
-import { Flex, Text } from "../../../components/chakra";
+import { Box, Flex, Text } from "../../../components/chakra";
 
 const Page = async ({ params }: { params: { slug: string } }) => {
   const project = await getProject(params.slug);
@@ -22,10 +22,11 @@ const Page = async ({ params }: { params: { slug: string } }) => {
         </Section>
       )}
       {project.youtube_video_url && (
-        <Section pt="0" as={Flex} alignItems="center">
-          <iframe
-            width="560"
-            height="315"
+        <Section pt="0" as={Flex} justifyContent="center">
+          <Box
+            as="iframe"
+            width="600px"
+            height="350px"
             src={project.youtube_video_url}
             title={`${project.name} - video`}
             allow="accelerometer;
@@ -35,7 +36,8 @@ const Page = async ({ params }: { params: { slug: string } }) => {
               gyroscope;
               picture-in-picture"
             allowFullScreen
-          ></iframe>
+            maxWidth="100%"
+          ></Box>
         </Section>
       )}
       {project.gallery_images && project.gallery_images.length > 0 && (

@@ -1,6 +1,6 @@
 "use client";
 
-import { extendTheme, Theme } from "@chakra-ui/react";
+import { extendTheme } from "@chakra-ui/react";
 import colors from "./colors";
 import {
   Button,

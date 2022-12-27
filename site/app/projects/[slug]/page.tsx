@@ -1,6 +1,5 @@
 import HeaderSection from "../../(components)/HeaderSection";
 import ImageGallery from "../../(components)/ImageGallery";
-import ProjectGallery from "../../(components)/ProjectGallery";
 import Section from "../../(components)/Section";
 import { getProject, getProjects } from "../../../api/queries";
 import { Box, Flex, Text } from "../../../components/chakra";

@@ -13,7 +13,7 @@ const Navigation = (props: NavigationProps) => {
       alignItems="center"
       position="relative"
       width="100%"
-      zIndex="100"
+      zIndex="101"
       {...props}
     >
       {/* <Box color="white">

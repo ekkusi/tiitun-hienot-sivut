@@ -1,5 +1,5 @@
 import { TextProps } from "@chakra-ui/react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Image, { ImageProps } from "next/image";
 import Link from "next/link";
 import { Project } from "../../api/queries";
@@ -21,6 +21,26 @@ const textMotion = {
     opacity: 1,
     y: "-50%",
     x: "-50%",
+    transition: {
+      duration: 0.3,
+    },
+  },
+};
+
+const underLineMotion: Variants = {
+  rest: {
+    width: "0",
+    transition: {
+      delay: 0,
+    },
+  },
+  hover: {
+    width: "100%",
+    transition: {
+      delay: 0.2,
+      // type: "tween",
+      // duration: 0.2,
+    },
   },
 };
 
@@ -59,17 +79,37 @@ const ProjectCard = ({ project, imageProps, ...rest }: ProjectCardProps) => {
           fill
           {...imageProps}
         />
-        <Text
+        <Box
           position="absolute"
           color="white"
           top="50%"
           left="50%"
-          transform="translate(-50%, -50%)"
-          as={motion.span}
+          transform="translate(-50%, 0)"
+          opacity="0"
+          as={motion.div}
           variants={textMotion}
         >
-          {project.name}
-        </Text>
+          {/* <Text as="span" display="block">
+            {project.name}
+          </Text> */}
+          <Text
+            as="span"
+            display="block"
+            // fontSize={{ base: "lg", md: "xlx " }}
+          >
+            Lue lisää
+          </Text>
+          <Box
+            as={motion.div}
+            variants={underLineMotion}
+            position="absolute"
+            bottom="1"
+            left="0"
+            backgroundColor="white"
+            width="100%"
+            height="1px"
+          />
+        </Box>
       </Box>
     </Text>
     // </Box>

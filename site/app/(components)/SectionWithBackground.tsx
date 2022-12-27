@@ -21,6 +21,7 @@ const SectionWithBackground = ({
       backgroundPosition="center"
       backgroundSize="cover"
       backgroundAttachment="fixed"
+      zIndex={100}
       {...rest}
     >
       {children}

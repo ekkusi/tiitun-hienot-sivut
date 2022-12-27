@@ -26,8 +26,8 @@ const theme = extendTheme({
         margin: 0,
         width: "100%",
         minHeight: "100vh",
-        color: colors.textWhite,
-        bg: colors.darkBg,
+        color: colors.text,
+        bg: colors.bg,
         overflowX: "hidden",
       },
       body: {

@@ -5,6 +5,7 @@ import Navigation from "./Navigation";
 import theme from "../theme";
 import Fonts from "../theme/Fonts";
 import Footer from "./(components)/Footer";
+import { AnimatePresence } from "framer-motion";
 
 export default function RootLayout({
   children,
@@ -18,7 +19,15 @@ export default function RootLayout({
         <Fonts />
         <ChakraProvider theme={theme}>
           <Navigation position="absolute" />
-          {children}
+          <AnimatePresence
+            exitBeforeEnter
+            initial={false}
+            onExitComplete={() =>
+              typeof window != "undefined" && window.scrollTo(0, 0)
+            }
+          >
+            {children}
+          </AnimatePresence>
           <Footer />
         </ChakraProvider>
       </body>

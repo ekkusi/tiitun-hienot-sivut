@@ -51,41 +51,16 @@ const splitSources = <T extends unknown>(
       sources: sourceCollection,
     });
   });
-  console.log("Aspect ratio sum: ", aspectRatioSum);
-  // const aspectRatioSum = collections
-  //   .map((collection) => collection.aspectRatioReciprocalSum)
-  //   .reduce((a, b) => 1 / a + 1 / b);
 
   // Calculate column height
   const columnHeight =
     (windowWidth - spacingPixels * collections.length) / aspectRatioSum;
 
-  console.log("window width: ", windowWidth);
-
-  // console.log("c: ", columnHeight);
-  // console.log("window width: ", windowWidth);
-
-  // let totalWidth = 0;
   // Calculate column width, scale to percentage
   collections.forEach((collection) => {
     collection.widthPercentage =
       columnHeight / collection.aspectRatioReciprocalSum / windowWidth;
-    console.log("width: ", collection.widthPercentage);
   });
-  const sum = collections
-    .map((it) => it.widthPercentage)
-    .reduce((a, b) => a + b);
-  console.log("total width before: ", sum);
-
-  // collections.forEach((collection) => {
-  //   console.log("widthpercentage before: ", collection.widthPercentage);
-
-  //   collection.widthPercentage =
-  //     (collection.widthPercentage * windowWidth - 2) / windowWidth;
-  //   console.log("widthpercentage after: ", collection.widthPercentage);
-  // });
-  // sum = collections.map((it) => it.widthPercentage).reduce((a, b) => a + b);
-  // console.log("total width after: ", sum);
 
   return collections;
 };
@@ -122,8 +97,6 @@ const BaseGallery = <T,>({
 
     const windowWidth = window.innerWidth;
 
-    console.log("Running useeffect");
-
     if (isLargerThanLg)
       splittedSources = splitSources(
         defaultSources,
@@ -139,10 +112,9 @@ const BaseGallery = <T,>({
         spacingPixels
       );
 
-    console.log(splittedSources);
-
     setSources(splittedSources);
   }, [defaultSources, isLargerThanLg, isLargerThanMd, spacingPixels]);
+
   return (
     <Section isWide {...rest} py={0}>
       {sources && (

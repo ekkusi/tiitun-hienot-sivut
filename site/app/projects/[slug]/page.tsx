@@ -1,5 +1,5 @@
 import HeaderSection from "../../(components)/HeaderSection";
-import Layout from "../../(components)/Layout";
+import PageWrapper from "../../(components)/PageWrapper";
 import { getProject, getProjects } from "../../../api/queries";
 import ProjectMainSection from "./ProjectMainSection";
 
@@ -7,7 +7,7 @@ const Page = async ({ params }: { params: { slug: string } }) => {
   const project = await getProject(params.slug);
 
   return (
-    <Layout>
+    <PageWrapper>
       <HeaderSection
         title={project.name}
         imgSrc={project.main_image.url}
@@ -15,7 +15,7 @@ const Page = async ({ params }: { params: { slug: string } }) => {
         height="70vh"
       />
       <ProjectMainSection project={project} />
-    </Layout>
+    </PageWrapper>
   );
 };
 

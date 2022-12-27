@@ -1,7 +1,7 @@
 import { getGeneralInfo, getProjects } from "../api/queries";
 import { Box, Text } from "../components/chakra";
 import HeaderSection from "./(components)/HeaderSection";
-import Layout from "./(components)/Layout";
+import PageWrapper from "./(components)/PageWrapper";
 import ProjectGallery from "./(components)/ProjectGallery";
 import Section from "./(components)/Section";
 
@@ -12,7 +12,7 @@ const Page = async () => {
   const abstractProjects = projects.filter((it) => it.category == "abstract");
   const portraitProjects = projects.filter((it) => it.category == "portrait");
   return (
-    <Layout>
+    <PageWrapper>
       <HeaderSection
         imgSrc={general.hero_image_url}
         imgAlt={"Hero"}
@@ -38,7 +38,7 @@ const Page = async () => {
         <HeaderSection imgSrc={general.flower_image_url} title="Kukkatädit" />
         <ProjectGallery projects={flowerProjects} />
       </Box>
-    </Layout>
+    </PageWrapper>
   );
 };
 

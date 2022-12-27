@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Layout from "../(components)/Layout";
+import PageWrapper from "../(components)/PageWrapper";
 import { getProjects } from "../../api/queries";
 import { List, ListItem } from "../../components/chakra";
 
@@ -7,7 +7,7 @@ const Page = async () => {
   const projects = await getProjects();
 
   return (
-    <Layout>
+    <PageWrapper>
       <h1>Terve</h1>
       <h2>Terve</h2>
       <List>
@@ -17,7 +17,7 @@ const Page = async () => {
           </ListItem>
         ))}
       </List>
-    </Layout>
+    </PageWrapper>
   );
 };
 

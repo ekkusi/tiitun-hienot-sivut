@@ -18,17 +18,18 @@ export default function RootLayout({
       <body>
         <Fonts />
         <ChakraProvider theme={theme}>
-          <Navigation position="absolute" />
           <AnimatePresence
             exitBeforeEnter
             initial={false}
             onExitComplete={() =>
-              typeof window != "undefined" && window.scrollTo(0, 0)
+              typeof window != "undefined" &&
+              window.scrollTo({ top: 0, left: 0, behavior: "auto" })
             }
           >
+            <Navigation position="absolute" />
             {children}
+            <Footer />
           </AnimatePresence>
-          <Footer />
         </ChakraProvider>
       </body>
     </html>

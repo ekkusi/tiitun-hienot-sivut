@@ -79,13 +79,13 @@ function BaseGallery<T>({
   imageContainerProps,
   ...rest
 }: BaseGalleryProps<T>) {
-  const { breakpoints } = useTheme() as Theme;
+  const { breakpoints } = useTheme() as Partial<Theme>;
 
-  const [isLargerThanLg] = useMediaQuery(`(min-width: ${breakpoints.lg})`, {
+  const [isLargerThanLg] = useMediaQuery(`(min-width: ${breakpoints?.lg})`, {
     ssr: true,
     fallback: false,
   });
-  const [isLargerThanMd] = useMediaQuery(`(min-width: ${breakpoints.md})`, {
+  const [isLargerThanMd] = useMediaQuery(`(min-width: ${breakpoints?.md})`, {
     ssr: true,
     fallback: false,
   });

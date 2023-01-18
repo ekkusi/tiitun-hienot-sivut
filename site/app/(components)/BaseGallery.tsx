@@ -1,10 +1,11 @@
 "use client";
-import Section, { SectionProps } from "./Section";
-import { Box, Flex } from "../../components/chakra";
+
 import { useTheme, Theme, useMediaQuery, BoxProps } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { splitArray } from "../../utils/arrayUtils";
 import { SanityImageDimensions } from "tiitu-cms/types/schema";
+import Section, { SectionProps } from "./Section";
+import { Box, Flex } from "../../components/chakra";
+import { splitArray } from "../../utils/arrayUtils";
 
 type Source<T> = {
   dimensions: SanityImageDimensions;
@@ -47,7 +48,7 @@ const splitSources = <T extends unknown>(
 
     collections.push({
       widthPercentage: 0, // This needs to get set later
-      aspectRatioReciprocalSum: aspectRatioReciprocalSum,
+      aspectRatioReciprocalSum,
       sources: sourceCollection,
     });
   });
@@ -65,13 +66,13 @@ const splitSources = <T extends unknown>(
   return collections;
 };
 
-const BaseGallery = <T,>({
+function BaseGallery<T>({
   sources: defaultSources,
   mapFunction,
   spacingPixels = 2,
   imageContainerProps,
   ...rest
-}: BaseGalleryProps<T>) => {
+}: BaseGalleryProps<T>) {
   const { breakpoints } = useTheme() as Theme;
   // ssr-friendly media query with fallback
 
@@ -86,7 +87,7 @@ const BaseGallery = <T,>({
   const [sources, setSources] = useState<SourceCollection<T>[]>();
 
   useEffect(() => {
-    if (typeof window == "undefined") return;
+    if (typeof window === "undefined") return;
     let splittedSources = [
       {
         widthPercentage: 1.0,
@@ -143,6 +144,6 @@ const BaseGallery = <T,>({
       )}
     </Section>
   );
-};
+}
 
 export default BaseGallery;

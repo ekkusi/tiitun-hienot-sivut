@@ -1,11 +1,11 @@
 "use client";
 
 import { ChakraProvider } from "@chakra-ui/react";
+import { AnimatePresence } from "framer-motion";
 import Navigation from "./Navigation";
 import theme from "../theme";
 import Fonts from "../theme/Fonts";
 import Footer from "./(components)/Footer";
-import { AnimatePresence } from "framer-motion";
 
 export default function RootLayout({
   children,
@@ -13,23 +13,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html>
+    <html lang="fi">
       <head />
       <body>
         <Fonts />
         <ChakraProvider theme={theme}>
+          <Navigation position="absolute" />
           <AnimatePresence
             exitBeforeEnter
             initial={false}
             onExitComplete={() =>
-              typeof window != "undefined" &&
+              typeof window !== "undefined" &&
               window.scrollTo({ top: 0, left: 0, behavior: "auto" })
             }
           >
-            <Navigation position="absolute" />
             {children}
-            <Footer />
           </AnimatePresence>
+          <Footer />
         </ChakraProvider>
       </body>
     </html>

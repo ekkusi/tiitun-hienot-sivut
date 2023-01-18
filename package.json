@@ -4,7 +4,8 @@
   "workspaces": {
     "packages": [
       "sanity",
-      "site"
+      "site-gatsby",
+      "gatsby-theme-ekkus-design-library"
     ],
     "nohoist": [
       "**/react",
@@ -25,19 +26,25 @@
   "devDependencies": {
     "@next/eslint-plugin-next": "^13.0.5",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
     "concurrently": "^7.6.0",
-    "eslint": "^8.0.1",
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-next": "^13.0.5",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-config-typescript": "^3.0.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-react": "^7.31.11",
-    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "prettier": "^2.8.0",
-    "typescript": "*"
+    "typescript": "^4.9.4"
   },
   "scripts": {
     "start": "concurrently \"yarn --cwd site develop\" \"yarn --cwd sanity start\"",
     "stop": "bash scripts/killall.sh",
-    "build": "yarn --cwd site build"
+    "build": "yarn --cwd site-gatsby build"
   }
 }

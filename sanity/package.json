@@ -10,6 +10,7 @@
     "start": "npx @sanity/cli start",
     "build": "npx @sanity/cli build",
     "deploy": "npx @sanity/cli deploy",
+    "deploy-graphql": "npx @sanity/cli graphql deploy",
     "generate-types": "sanity-codegen"
   },
   "keywords": [

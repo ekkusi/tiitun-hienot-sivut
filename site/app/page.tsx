@@ -8,14 +8,14 @@ import Section from "./(components)/Section";
 const Page = async () => {
   const general = await getGeneralInfo();
   const projects = await getProjects();
-  const flowerProjects = projects.filter((it) => it.category == "flower");
-  const abstractProjects = projects.filter((it) => it.category == "abstract");
-  const portraitProjects = projects.filter((it) => it.category == "portrait");
+  const flowerProjects = projects.filter((it) => it.category === "flower");
+  const abstractProjects = projects.filter((it) => it.category === "abstract");
+  const portraitProjects = projects.filter((it) => it.category === "portrait");
   return (
-    <PageWrapper>
+    <PageWrapper key="/">
       <HeaderSection
         imgSrc={general.hero_image_url}
-        imgAlt={"Hero"}
+        imgAlt="Hero"
         height="100vh"
         title={general.hero_text}
         textElementProps={{

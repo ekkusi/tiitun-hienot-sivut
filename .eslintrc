@@ -1,42 +1,40 @@
 {
-  "env": {
-      "browser": true,
-      "es2021": true
-  },
   "extends": [
-      "eslint:recommended",
-      "plugin:react/recommended",
-      "plugin:@typescript-eslint/recommended",
+      "airbnb",
+      "airbnb-typescript",
+      // "eslint:recommended",
+      // "plugin:react/recommended",
       "prettier",
-      "next"
+      "plugin:prettier/recommended"
+      // "next"
   ],
-  "plugins": [
-      "react",
-      "react-hooks",
-      "@typescript-eslint", 
-      "prettier",
-      "@next/next"
-  ],
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
-  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },  
   "rules": {
-    "prettier/prettier": [
-      "error",
-      {
-        "endOfLine": "auto"
-      },
-      {
-        "usePrettierrc": true
-      }
-    ],
-    "react/react-in-jsx-scope": "off",
-    "camelcase": "error",
-    "quotes": ["error", "double"],
-    "no-duplicate-imports": "error",
-    "max-len": 1,
-    "@typescript-eslint/no-unnecessary-type-constraint": 0
+    "react/jsx-props-no-spreading": "off",
+    "import/prefer-default-export": "off",
+    "no-plusplus": "off",
+    "react/require-default-props": "off",
+    "react/no-array-index-key": "off",
+    "no-underscore-dangle": "off",
+    "@typescript-eslint/no-unused-vars": "warn"
+    // "prettier/prettier": [
+    //   "error",
+    //   {
+    //     "endOfLine": "auto"
+    //   },
+    //   {
+    //     "usePrettierrc": true
+    //   }
+    // ],
+    // "react/react-in-jsx-scope": "off",
+    // "camelcase": "error",
+    // "quotes": ["error", "double"],
+    // "no-duplicate-imports": "error",
+    // "max-len": 1,
+    // "@typescript-eslint/no-unnecessary-type-constraint": 0
+    
   }
 }

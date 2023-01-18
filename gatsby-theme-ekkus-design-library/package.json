@@ -1,0 +1,31 @@
+{
+  "name": "gatsby-theme-ekkus-design-library",
+  "version": "1.0.0",
+  "description": "Theme with Chakra UI",
+  "private": true,
+  "author": "Ekku Sipilä",
+  "license": "MIT",
+  "peerDependencies": {
+    "@chakra-ui/gatsby-plugin": "^3.1.1",
+    "@chakra-ui/react": "^2.4.7",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "framer-motion": "^8.4.2",
+    "gatsby": "^5.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@chakra-ui/gatsby-plugin": "^3.1.1",
+    "@chakra-ui/react": "^2.4.7",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "framer-motion": "^8.4.2",
+    "gatsby": "^5.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "scripts": {
+    "develop": "echo \"Starting theme\""
+  }
+}

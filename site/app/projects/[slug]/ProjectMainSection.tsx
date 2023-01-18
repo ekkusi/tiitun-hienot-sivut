@@ -1,4 +1,5 @@
 "use client";
+
 import { motion } from "framer-motion";
 import ImageGallery from "../../(components)/ImageGallery";
 import Section from "../../(components)/Section";
@@ -9,7 +10,7 @@ type ProjectMainSectionProps = {
   project: ProjectFullInfo;
 };
 
-const ProjectMainSection = ({ project }: ProjectMainSectionProps) => {
+function ProjectMainSection({ project }: ProjectMainSectionProps) {
   return (
     <motion.main
       initial={{ y: -300, opacity: 0 }}
@@ -43,7 +44,7 @@ const ProjectMainSection = ({ project }: ProjectMainSectionProps) => {
               picture-in-picture"
             allowFullScreen
             maxWidth="100%"
-          ></Box>
+          />
         </Section>
       )}
       {project.gallery_images && project.gallery_images.length > 0 && (
@@ -51,6 +52,6 @@ const ProjectMainSection = ({ project }: ProjectMainSectionProps) => {
       )}
     </motion.main>
   );
-};
+}
 
 export default ProjectMainSection;

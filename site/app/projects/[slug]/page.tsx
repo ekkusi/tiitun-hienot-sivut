@@ -7,7 +7,7 @@ const Page = async ({ params }: { params: { slug: string } }) => {
   const project = await getProject(params.slug);
 
   return (
-    <PageWrapper>
+    <PageWrapper key={`/projects/${params.slug}`}>
       <HeaderSection
         title={project.name}
         imgSrc={project.main_image.url}

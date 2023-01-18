@@ -2,10 +2,10 @@
 [build]
   command = "yarn build"
   functions = "netlify/functions"
-  publish = "./site/.next"
+  publish = "./site-gatsby/public"
 
 [[plugins]]
-  package = "@netlify/plugin-nextjs"
+  package = "@netlify/plugin-gatsby"
 
   ## Uncomment to use this redirect for Single Page Applications like create-react-app.
   ## Not needed for static site generators.

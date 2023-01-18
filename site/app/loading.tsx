@@ -1,7 +1,7 @@
 import { Spinner } from "../components/chakra";
 
-const Loading = () => {
+function Loading() {
   return <Spinner />;
-};
+}
 
 export default Loading;

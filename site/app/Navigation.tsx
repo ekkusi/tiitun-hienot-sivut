@@ -1,12 +1,12 @@
-import { Flex, Icon, Text } from "../components/chakra";
 import { FiInstagram } from "react-icons/fi";
-import Logo from "./(components)/Logo";
 import Link from "next/link";
 import { FlexProps } from "@chakra-ui/react";
+import Logo from "./(components)/Logo";
+import { Flex, Icon, Text } from "../components/chakra";
 
 type NavigationProps = FlexProps;
 
-const Navigation = (props: NavigationProps) => {
+function Navigation(props: NavigationProps) {
   return (
     <Flex
       justifyContent="center"
@@ -35,6 +35,6 @@ const Navigation = (props: NavigationProps) => {
       </Text>
     </Flex>
   );
-};
+}
 
 export default Navigation;

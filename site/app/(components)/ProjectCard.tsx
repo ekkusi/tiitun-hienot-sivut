@@ -53,7 +53,7 @@ const containerMotion = {
   },
 };
 
-const ProjectCard = ({ project, imageProps, ...rest }: ProjectCardProps) => {
+function ProjectCard({ project, imageProps, ...rest }: ProjectCardProps) {
   return (
     // <Box {...rest}>
     <Text
@@ -114,6 +114,6 @@ const ProjectCard = ({ project, imageProps, ...rest }: ProjectCardProps) => {
     </Text>
     // </Box>
   );
-};
+}
 
 export default ProjectCard;

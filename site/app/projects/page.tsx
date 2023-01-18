@@ -3,11 +3,13 @@ import PageWrapper from "../(components)/PageWrapper";
 import { getProjects } from "../../api/queries";
 import { List, ListItem } from "../../components/chakra";
 
-const Page = async () => {
+const Page = async (props: any) => {
+  console.log(props);
+
   const projects = await getProjects();
 
   return (
-    <PageWrapper>
+    <PageWrapper key="/projects">
       <h1>Terve</h1>
       <h2>Terve</h2>
       <List>

@@ -11,15 +11,15 @@ type ProjectGalleryProps = SectionProps & {
 };
 
 function ProjectGallery({ projects, ...rest }: ProjectGalleryProps) {
-  const { breakpoints } = useTheme() as Theme;
+  const { breakpoints } = useTheme() as Partial<Theme>;
   const mapFunction = (project: Queries.SanityProjectFragment) => {
     return (
       <ProjectCard
         key={project._id}
         project={project}
         imageProps={{
-          sizes: `(max-width: ${breakpoints.md}) 100vw,
-                      (max-width: ${breakpoints.lg}) 50vw,
+          sizes: `(max-width: ${breakpoints?.md}) 100vw,
+                      (max-width: ${breakpoints?.lg}) 50vw,
                       33vw
                     `,
         }}

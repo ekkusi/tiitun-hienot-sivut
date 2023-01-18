@@ -9,15 +9,15 @@ type ImageGalleryProps = SectionProps & {
 };
 
 function ImageGallery({ images, ...rest }: ImageGalleryProps) {
-  const { breakpoints } = useTheme() as Theme;
+  const { breakpoints } = useTheme() as Partial<Theme>;
   const mapFunction = (image: Queries.SanityImageFragment) => (
     <GatsbyImage
       key={image.asset.url}
       image={image.asset.gatsbyImageData}
       className="next-image__auto-height"
       alt={image.asset.url}
-      sizes={`(max-width: ${breakpoints.md}) 100vw,
-                    (max-width: ${breakpoints.lg}) 50vw,
+      sizes={`(max-width: ${breakpoints?.md}) 100vw,
+                    (max-width: ${breakpoints?.lg}) 50vw,
                     33vw
             `}
     />

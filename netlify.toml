@@ -3,7 +3,6 @@
   command = "yarn build"
   functions = "netlify/functions"
   publish = "./site-gatsby/public"
-  NODE_VERSION = 18
 
 [[plugins]]
   package = "@netlify/plugin-gatsby"

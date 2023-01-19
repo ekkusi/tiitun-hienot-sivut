@@ -34,7 +34,15 @@ function SectionWithBackground({
     <Section as="div" position="relative" isWide py={0} zIndex={100} {...rest}>
       <BackgroundImage
         fluid={imageConverted.fluid}
-        style={{ position: "absolute", width: "100%", height: "100%" }}
+        style={{
+          position: "absolute",
+          width: "100%",
+          height: "100%",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          backgroundAttachment: "fixed",
+        }}
       />
       {children}
     </Section>

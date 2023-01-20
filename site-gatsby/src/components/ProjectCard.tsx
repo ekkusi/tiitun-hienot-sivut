@@ -1,8 +1,10 @@
-import { Box, TextProps, Text } from "@chakra-ui/react";
-import { motion, Variants } from "framer-motion";
+import { TextProps, Text, Icon } from "@chakra-ui/react";
+import { Variants } from "framer-motion";
 import { Link } from "gatsby";
 import { GatsbyImage, GatsbyImageProps } from "gatsby-plugin-image";
 import React from "react";
+import { BsArrowRight } from "react-icons/bs";
+import { MotionBox } from "./motion-chakra";
 
 type ProjectCardProps = TextProps & {
   project: Queries.SanityProjectFragment;
@@ -45,6 +47,7 @@ const underLineMotion: Variants = {
 const containerMotion = {
   rest: {
     opacity: 1,
+    scale: 1,
   },
   hover: {
     opacity: 0.8,
@@ -56,12 +59,12 @@ function ProjectCard({ project, imageProps, ...rest }: ProjectCardProps) {
     // <Box {...rest}>
     <Text
       as={Link}
+      display="block"
       to={`project/${project.slug.current}`}
       _hover={{ opacity: 1, transition: "none" }}
       {...rest}
     >
-      <Box
-        as={motion.div}
+      <MotionBox
         position="relative"
         initial="rest"
         whileHover="hover"
@@ -73,14 +76,13 @@ function ProjectCard({ project, imageProps, ...rest }: ProjectCardProps) {
           alt={project.name}
           {...imageProps}
         />
-        <Box
+        <MotionBox
           position="absolute"
           color="white"
           top="50%"
           left="50%"
           transform="translate(-50%, 0)"
           opacity="0"
-          as={motion.div}
           variants={textMotion}
         >
           {/* <Text as="span" display="block">
@@ -93,8 +95,7 @@ function ProjectCard({ project, imageProps, ...rest }: ProjectCardProps) {
           >
             Lue lisää
           </Text>
-          <Box
-            as={motion.div}
+          <MotionBox
             variants={underLineMotion}
             position="absolute"
             bottom="1"
@@ -103,8 +104,19 @@ function ProjectCard({ project, imageProps, ...rest }: ProjectCardProps) {
             width="100%"
             height="1px"
           />
-        </Box>
-      </Box>
+        </MotionBox>
+        <Text
+          as={Link}
+          to={`project/${project.slug.current}`}
+          display={{ base: "inline-block", sm: "none" }}
+          position="absolute"
+          bottom={2}
+          right={2}
+          color="white"
+        >
+          <Icon as={BsArrowRight} h={6} w={6} />
+        </Text>
+      </MotionBox>
     </Text>
     // </Box>
   );

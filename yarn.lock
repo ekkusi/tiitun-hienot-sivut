@@ -8260,6 +8260,17 @@ gatsby-plugin-image@^3.4.0:
     objectFitPolyfill "^2.3.5"
     prop-types "^15.8.1"
 
+gatsby-plugin-manifest@^5.4.0:
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-5.4.0.tgz#945842f92d3c1e7ca46b3c5a74edf44cba1c2888"
+  integrity sha512-Jw1LUJxLnIoeGdbsKies/0NpKOganfBMDpusgIbYZzBENlsNcJTtlOFWfbExJFAutc2ZStDoQrch6AkOvwujBw==
+  dependencies:
+    "@babel/runtime" "^7.20.7"
+    gatsby-core-utils "^4.4.0"
+    gatsby-plugin-utils "^4.4.0"
+    semver "^7.3.8"
+    sharp "^0.31.3"
+
 gatsby-plugin-netlify@^5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify/-/gatsby-plugin-netlify-5.1.0.tgz#a681b7fafef4f5ae026a72c3bfe01c8f395e52b8"

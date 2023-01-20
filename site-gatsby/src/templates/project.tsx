@@ -19,6 +19,22 @@ function ProjectPage({ data, location }: PageProps<Queries.ProjectPageQuery>) {
         imgSrc={project.main_image.asset.url}
         width="100vw"
         height="70vh"
+        textElementProps={{
+          initial: {
+            opacity: 0,
+            y: "0",
+            x: "-50%",
+          },
+          animate: {
+            opacity: 1,
+            y: "-50%",
+            x: "-50%",
+          },
+          transition: {
+            delay: 1,
+            duration: 0.3,
+          },
+        }}
       />
       <motion.main
         initial={{ y: -300, opacity: 0 }}
@@ -27,7 +43,7 @@ function ProjectPage({ data, location }: PageProps<Queries.ProjectPageQuery>) {
           type: "tween",
           // stiffness: 260,
           // damping: 20,
-          delay: 0.5,
+          delay: 1.2,
           duration: 0.5,
         }}
       >

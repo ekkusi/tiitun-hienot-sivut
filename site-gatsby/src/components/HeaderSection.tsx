@@ -1,13 +1,14 @@
-import { BoxProps, TextProps, Text } from "@chakra-ui/react";
+import { BoxProps } from "@chakra-ui/react";
 import { IGatsbyImageData } from "gatsby-plugin-image";
 import React from "react";
+import { MotionText, MotionTextProps } from "./motion-chakra";
 import SectionWithBackground from "./SectionWithBackground";
 
 type HeaderSectionProps = BoxProps & {
   title: string;
   image: IGatsbyImageData;
   imgSrc: string;
-  textElementProps?: TextProps;
+  textElementProps?: MotionTextProps;
 };
 
 function HeaderSection({
@@ -25,7 +26,7 @@ function HeaderSection({
       imgSrc={imgSrc}
       {...rest}
     >
-      <Text
+      <MotionText
         as="h2"
         position="absolute"
         top="50%"
@@ -35,7 +36,7 @@ function HeaderSection({
         {...textElementProps}
       >
         {title}
-      </Text>
+      </MotionText>
     </SectionWithBackground>
   );
 }

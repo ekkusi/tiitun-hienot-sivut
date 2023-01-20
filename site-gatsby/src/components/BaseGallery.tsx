@@ -75,7 +75,7 @@ const splitSources = <T extends unknown>(
 function BaseGallery<T>({
   sources: defaultSources,
   mapFunction,
-  spacingPixels = 2,
+  spacingPixels = 3,
   imageContainerProps,
   ...rest
 }: BaseGalleryProps<T>) {

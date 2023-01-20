@@ -24,9 +24,6 @@ const config: GatsbyConfig = {
     //   },
     // },
     // "gatsby-theme-ekkus-design-library",
-    "gatsby-plugin-image",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -35,7 +32,16 @@ const config: GatsbyConfig = {
       },
       __key: "images",
     },
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        icon: "static/logo-cropped.svg",
+      },
+    },
     "gatsby-plugin-netlify",
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
   ],
 };
 

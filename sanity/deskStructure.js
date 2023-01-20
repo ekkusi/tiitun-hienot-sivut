@@ -1,7 +1,4 @@
-// deskStructure.js
-import S from "@sanity/desk-tool/structure-builder";
-
-const structure = () =>
+export const structure = (S) =>
   S.list()
     .title("Base")
     .items([
@@ -17,5 +14,3 @@ const structure = () =>
         (listItem) => !["general"].includes(listItem.getId())
       ),
     ]);
-
-export default structure;
